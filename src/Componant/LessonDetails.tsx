@@ -146,9 +146,9 @@ const LessonDetails = ({ id, onBack }: LessonDetailsProps) => {
 
   if (!lesson) {
     return (
-      <div className="bg-slate-900 border border-slate-800 rounded-2xl p-12 text-center max-w-xl mx-auto shadow-2xl">
-        <h2 className="text-2xl font-bold text-slate-100 mb-4">Lesson Not Found</h2>
-        <p className="text-slate-400 mb-8">The course details page you're trying to visit doesn't exist.</p>
+      <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-12 text-center max-w-xl mx-auto shadow-2xl">
+        <h2 className="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-4">Lesson Not Found</h2>
+        <p className="text-slate-600 dark:text-slate-400 mb-8">The course details page you're trying to visit doesn't exist.</p>
         <button 
           onClick={onBack}
           className="px-6 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl font-bold transition duration-200 cursor-pointer shadow-lg hover:shadow-indigo-500/20"
@@ -190,9 +190,9 @@ const LessonDetails = ({ id, onBack }: LessonDetailsProps) => {
       {/* Back Link Button */}
       <button 
         onClick={onBack}
-        className="flex items-center gap-2.5 text-sm text-slate-400 hover:text-indigo-400 transition-colors duration-200 bg-slate-900/60 border border-slate-800 px-4 py-2.5 rounded-xl hover:border-slate-700 cursor-pointer"
+        className="flex items-center gap-2.5 text-sm text-slate-500 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200 bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 px-4 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:border-slate-700 cursor-pointer"
       >
-        <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+        <svg className="w-4 h-4 text-slate-500 dark:text-slate-400" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
         </svg>
         <span>Back to Lessons</span>
@@ -218,43 +218,43 @@ const LessonDetails = ({ id, onBack }: LessonDetailsProps) => {
         <div className="lg:col-span-2 space-y-8">
           
           {/* Main Info Box */}
-          <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 sm:p-8 space-y-5 shadow-xl">
+          <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 sm:p-8 space-y-5 shadow-xl transition-colors duration-300">
             <div className="flex flex-wrap items-center gap-3">
-              <span className="bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-sm">
+              <span className="bg-indigo-50 dark:bg-indigo-500/10 border border-indigo-200 dark:border-indigo-500/20 text-indigo-600 dark:text-indigo-400 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-sm">
                 {category}
               </span>
-              <span className="bg-slate-950/60 text-slate-400 text-xs font-semibold px-2.5 py-1 rounded-full">
+              <span className="bg-slate-100 dark:bg-slate-950/60 text-slate-600 dark:text-slate-400 text-xs font-semibold px-2.5 py-1 rounded-full">
                 Difficulty: {details.level}
               </span>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-100 tracking-tight leading-tight">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight leading-tight">
               {lesson.title}
             </h1>
 
-            <div className="flex items-center gap-6 flex-wrap text-sm text-slate-400 pt-2 border-t border-slate-800/40">
+            <div className="flex items-center gap-6 flex-wrap text-sm text-slate-600 dark:text-slate-400 pt-2 border-t border-slate-200 dark:border-slate-800/40">
               <div className="flex items-center gap-2">
-                <span className="text-amber-400 text-lg">&#9733;</span>
-                <span className="font-bold text-slate-200">{lesson.rate} rating</span>
+                <span className="text-amber-500 dark:text-amber-400 text-lg">&#9733;</span>
+                <span className="font-bold text-slate-800 dark:text-slate-200">{lesson.rate} rating</span>
                 <span className="text-slate-500">(148 reviews)</span>
               </div>
-              <div className="text-slate-500">|</div>
+              <div className="text-slate-300 dark:text-slate-700">|</div>
               <div>
-                Instructor: <strong className="text-slate-200">{instructor}</strong>
+                Instructor: <strong className="text-slate-800 dark:text-slate-200">{instructor}</strong>
               </div>
             </div>
           </div>
 
           {/* Interactive Navigation Tabs */}
-          <div className="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-xl">
-            <div className="flex border-b border-slate-850 flex-wrap">
+          <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-xl transition-colors duration-300">
+            <div className="flex border-b border-slate-200 dark:border-slate-850 flex-wrap">
               {(['overview', 'curriculum', 'instructor'] as const).map((tab) => (
                 <button
                   key={tab}
                   className={`flex-1 min-w-[100px] text-center py-4 text-sm font-semibold capitalize transition-all cursor-pointer ${
                     activeTab === tab
-                      ? 'bg-slate-850/80 border-b-2 border-indigo-500 text-indigo-400'
-                      : 'text-slate-405 text-slate-400 hover:text-slate-200 hover:bg-slate-850/20'
+                      ? 'bg-indigo-50/50 dark:bg-slate-850/80 border-b-2 border-indigo-500 text-indigo-600 dark:text-indigo-400'
+                      : 'text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-850/20'
                   }`}
                   onClick={() => setActiveTab(tab)}
                 >
@@ -268,17 +268,17 @@ const LessonDetails = ({ id, onBack }: LessonDetailsProps) => {
               {activeTab === 'overview' && (
                 <div className="space-y-6">
                   <div>
-                    <h3 className="text-lg font-bold text-slate-200 mb-3">Course Description</h3>
-                    <p className="text-sm sm:text-base text-slate-404 text-slate-400 leading-relaxed font-light">
+                    <h3 className="text-lg font-bold text-slate-800 dark:text-slate-200 mb-3">Course Description</h3>
+                    <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed font-light">
                       {lesson.description} This comprehensive guide provides everything you need to start building and mastering software projects. Designed by industry experts, it covers fundamental paradigms, real-world development setups, and step-by-step practical guides. You'll complete hands-on assignments and construct a robust portfolio project.
                     </p>
                   </div>
 
                   <div>
-                    <h3 className="text-lg font-bold text-slate-200 mb-3">Skills Acquired</h3>
+                    <h3 className="text-lg font-bold text-slate-800 dark:text-slate-200 mb-3">Skills Acquired</h3>
                     <div className="flex flex-wrap gap-2">
                       {details.skills.map((skill, index) => (
-                        <span key={index} className="px-3 py-1.5 bg-slate-950/60 border border-slate-800 rounded-xl text-xs font-semibold text-slate-350">
+                        <span key={index} className="px-3 py-1.5 bg-slate-100 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 rounded-xl text-xs font-semibold text-slate-600 dark:text-slate-300">
                           {skill}
                         </span>
                       ))}
@@ -290,16 +290,16 @@ const LessonDetails = ({ id, onBack }: LessonDetailsProps) => {
               {/* Tab 2: Curriculum Timeline */}
               {activeTab === 'curriculum' && (
                 <div className="space-y-6">
-                  <h3 className="text-lg font-bold text-slate-200 mb-2">Modules Breakdown</h3>
+                  <h3 className="text-lg font-bold text-slate-800 dark:text-slate-200 mb-2">Modules Breakdown</h3>
                   <div className="space-y-4">
                     {details.lectures.map((lecture, index) => (
-                      <div key={index} className="flex items-start gap-4 p-4 rounded-xl border border-slate-800/60 bg-slate-950/20 group hover:border-slate-800 transition-colors">
-                        <span className="font-mono text-zinc-500 text-sm font-bold pt-0.5">0{index + 1}</span>
+                      <div key={index} className="flex items-start gap-4 p-4 rounded-xl border border-slate-200 dark:border-slate-800/60 bg-slate-50 dark:bg-slate-950/20 group hover:border-slate-300 dark:hover:border-slate-800 transition-colors">
+                        <span className="font-mono text-slate-400 dark:text-zinc-500 text-sm font-bold pt-0.5">0{index + 1}</span>
                         <div className="flex-grow">
-                          <h4 className="font-bold text-slate-250 text-slate-300 group-hover:text-slate-100 transition-colors text-sm sm:text-base">{lecture}</h4>
+                          <h4 className="font-bold text-slate-800 dark:text-slate-300 group-hover:text-indigo-600 dark:group-hover:text-slate-100 transition-colors text-sm sm:text-base">{lecture}</h4>
                           <span className="text-xs text-slate-500 mt-1 block">Lecture Block &bull; Required reading</span>
                         </div>
-                        <span className="text-xs text-indigo-400 font-semibold bg-indigo-500/5 border border-indigo-500/10 px-2.5 py-1 rounded-lg">
+                        <span className="text-xs text-indigo-600 dark:text-indigo-400 font-semibold bg-indigo-50 dark:bg-indigo-500/5 border border-indigo-200 dark:border-indigo-500/10 px-2.5 py-1 rounded-lg">
                           Week {index + 1}
                         </span>
                       </div>
@@ -311,7 +311,7 @@ const LessonDetails = ({ id, onBack }: LessonDetailsProps) => {
               {/* Tab 3: Instructor Information */}
               {activeTab === 'instructor' && (
                 <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6">
-                  <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-slate-805 border border-slate-700/60 overflow-hidden shrink-0">
+                  <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-slate-200 dark:bg-slate-805 border border-slate-300 dark:border-slate-700/60 overflow-hidden shrink-0">
                     <img 
                       className="w-full h-full object-cover" 
                       src={`https://images.unsplash.com/photo-${lesson.id % 2 === 0 ? '1534528741775-53994a69daeb' : '1507003211169-0a1dd7228f2d'}?auto=format&fit=crop&w=150&q=80`} 
@@ -319,14 +319,14 @@ const LessonDetails = ({ id, onBack }: LessonDetailsProps) => {
                     />
                   </div>
                   <div className="space-y-3 text-center sm:text-left">
-                    <h3 className="text-xl font-bold text-slate-200">{instructor}</h3>
-                    <p className="text-xs text-indigo-451 text-indigo-400 font-semibold uppercase tracking-wider">Lead Learning Advisor & Instructor</p>
-                    <p className="text-sm text-slate-400 leading-relaxed max-w-xl">
+                    <h3 className="text-xl font-bold text-slate-900 dark:text-slate-200">{instructor}</h3>
+                    <p className="text-xs text-indigo-600 dark:text-indigo-400 font-semibold uppercase tracking-wider">Lead Learning Advisor & Instructor</p>
+                    <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed max-w-xl">
                       {instructorBio}
                     </p>
                     <div className="flex gap-6 justify-center sm:justify-start text-xs text-slate-500 pt-2 font-mono">
-                      <div>Students: <span className="font-bold text-slate-400">12k+</span></div>
-                      <div>Courses: <span className="font-bold text-slate-400">5</span></div>
+                      <div>Students: <span className="font-bold text-slate-800 dark:text-slate-400">12k+</span></div>
+                      <div>Courses: <span className="font-bold text-slate-800 dark:text-slate-400">5</span></div>
                     </div>
                   </div>
                 </div>
@@ -337,12 +337,12 @@ const LessonDetails = ({ id, onBack }: LessonDetailsProps) => {
 
         {/* Right Side Layout (Sticky details card & CTA) */}
         <div className="lg:col-span-1">
-          <div className="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-xl sticky top-8 hover:border-slate-750 transition-all duration-300">
+          <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-xl sticky top-8 hover:border-slate-300 dark:hover:border-slate-750 transition-all duration-300">
             
             {/* Featured Image */}
-            <div className="relative aspect-[4/3] w-full bg-slate-950">
+            <div className="relative aspect-[4/3] w-full bg-slate-100 dark:bg-slate-950">
               <img className="w-full h-full object-cover" src={lesson.img} alt={lesson.title} />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 dark:from-slate-950 via-transparent to-transparent"></div>
               <span className="absolute bottom-4 right-4 bg-emerald-500/90 text-white text-xs font-semibold px-2.5 py-1 rounded-sm shadow-md">
                 AVAILABLE NOW
               </span>
@@ -352,18 +352,18 @@ const LessonDetails = ({ id, onBack }: LessonDetailsProps) => {
             <div className="p-6 sm:p-8 space-y-6">
               
               <div className="grid grid-cols-2 gap-4">
-                <div className="p-3 bg-slate-950/60 rounded-xl border border-slate-800/40 text-center">
+                <div className="p-3 bg-slate-50 dark:bg-slate-950/60 rounded-xl border border-slate-200 dark:border-slate-800/40 text-center">
                   <span className="text-xs text-slate-500 block uppercase font-bold tracking-wider">Duration</span>
-                  <span className="font-bold text-slate-200 text-sm mt-1 block">{details.duration}</span>
+                  <span className="font-bold text-slate-800 dark:text-slate-200 text-sm mt-1 block">{details.duration}</span>
                 </div>
-                <div className="p-3 bg-slate-950/60 rounded-xl border border-slate-800/40 text-center">
+                <div className="p-3 bg-slate-50 dark:bg-slate-950/60 rounded-xl border border-slate-200 dark:border-slate-800/40 text-center">
                   <span className="text-xs text-slate-500 block uppercase font-bold tracking-wider">Total Time</span>
-                  <span className="font-bold text-slate-200 text-sm mt-1 block">{details.hours} Hours</span>
+                  <span className="font-bold text-slate-800 dark:text-slate-200 text-sm mt-1 block">{details.hours} Hours</span>
                 </div>
               </div>
 
               {/* Course Features list */}
-              <div className="space-y-3.5 text-sm text-slate-350">
+              <div className="space-y-3.5 text-sm text-slate-700 dark:text-slate-300">
                 <div className="flex items-center gap-3">
                   <span className="text-emerald-500 text-base">&#10003;</span>
                   <span>Self-paced learning model</span>
