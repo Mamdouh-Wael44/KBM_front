@@ -1,0 +1,58 @@
+:root {
+  /* n8n Chat overrides to match the dark theme custom design */
+  
+  /* Widget rounded corners and boundaries */
+  --chat--window--border-radius: 12px;
+  --chat--window--border: 1px solid #1e293b;
+  --chat--window--width: 1900px;
+  --chat--window--height: 1000px;
+  
+  /* Typography */
+  --chat--color-dark: #f8fafc;
+  --chat--color-light: #07111d;
+  --chat--heading--font-size: 24px;
+  --chat--subtitle--font-size: 13px;
+  --chat--font-family: inherit;
+  
+  /* Header styling */
+  --chat--header--background: #5387c3;
+  --chat--header--color: #ffffff;
+  --chat--header--border-bottom: 1px solid #1e293b;
+  
+  /* Body */
+  --chat--body--background: #07111d;
+  
+  /* Messages */
+  --chat--message--user--background: #2563eb;
+  --chat--message--user--color: #ffffff;
+  
+  --chat--message--bot--background: #111f2e;
+  --chat--message--bot--color: #f1f5f9;
+  --chat--message--bot--border: 1px solid #1e293b;
+  
+  /* Input area (footer) */
+  --chat--footer--background: #0a1725;
+  --chat--footer--border-top: 1px solid #1e293b;
+  --chat--input--background: #0a1725;
+  --chat--input--text-color: #f1f5f9;
+  --chat--input--container--background: #111f2e;
+  --chat--input--container--border: 1px solid #1e293b;
+  
+  /* Buttons / Interaction */
+  --chat--toggle--background: #2563eb;
+  --chat--toggle--color: #ffffff;
+  --chat--toggle--hover--background: #1d4ed8;
+  --chat--toggle--active--background: #1e40af;
+  
+  --chat--input--send--button--color: #2563eb;
+  --chat--input--send--button--color-hover: #3b82f6;
+  
+  /* Scrollbar override if any */
+  --chat--color-light-shade-100: #1e293b;
+}
+
+/* Base body style to ensure global dark background inside the chat app if needed */
+.n8n-chat {
+  color-scheme: dark;
+  
+}

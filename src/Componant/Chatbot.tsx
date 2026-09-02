@@ -375,11 +375,10 @@ const Chatbot = () => {
                   {messages.map((msg) => (
                     <div
                       key={msg.id}
-                      className={`flex items-start gap-3 ${
-                        msg.sender === "user"
+                      className={`flex items-start gap-3 ${msg.sender === "user"
                           ? "justify-end"
                           : "justify-start"
-                      }`}
+                        }`}
                     >
                       {/* AI Icon */}
                       {msg.sender === "ai" && (
@@ -406,15 +405,14 @@ const Chatbot = () => {
                           text-sm
                           leading-6
                           shadow-sm
-                          ${
-                            msg.sender === "user"
-                              ? `
+                          ${msg.sender === "user"
+                            ? `
                                 rounded-br-md
                                 bg-blue-600
                                 text-white
                                 shadow-blue-600/10
                               `
-                              : `
+                            : `
                                 rounded-tl-md
                                 border
                                 border-slate-200
